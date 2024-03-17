@@ -10,9 +10,9 @@ class DepartmentModel {
         })
     }
 
-    static async addDepartments(name){
+    static async addDepartments(departments){
         return new Promise(resolve => {
-            db.query('INSERT INTO department (NAME_DEPARTMENT) VALUES(?)', [name], (error, result) => {
+            db.query('INSERT INTO department (NAME_DEPARTMENT) VALUES ?', [departments], (error, result) => {
                 if(!error)
                     resolve(true);
                 else

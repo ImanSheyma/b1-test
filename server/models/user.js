@@ -10,10 +10,11 @@ class UserModel {
         })
     }
 
-    static async addUsers(user){
+    static async addUsers(users){
         return new Promise(resolve => {
-            db.query('INSERT INTO user(LAST_NAME, NAME, SECOND_NAME, WORK_POSITION, EMAIL, MOBILE_PHONE, PHONE, LOGIN, PASSWORD, DEPARTMENT) VALUES(?,?,?,?,?,?,?,?,?,?)',
-                [user.LAST_NAME, user.NAME, user.SECOND_NAME, user.WORK_POSITION, user.EMAIL, user.MOBILE_PHONE, user.PHONE, user.LOGIN, user.PASSWORD, user.DEPARTMENT], (error, result) => {
+            const sql = 'INSERT INTO user(LAST_NAME, NAME, SECOND_NAME, WORK_POSITION,'+
+                'EMAIL, MOBILE_PHONE, PHONE, LOGIN, PASSWORD, DEPARTMENT) VALUES ?';
+            db.query(sql, [users], (error, result) => {
                 if(!error){
                     resolve(true);
                 }

@@ -8,7 +8,9 @@ class DepartmentController{
     }
 
     static async addDepartments(req, res){
-        var result = await DepartmentModel.addDepartments(req.body.name);
+        const departments = req.body.map(department => [department.name]);
+        
+        var result = await DepartmentModel.addDepartments(departments);
         if(result)
             res.send('record added successfully');
         else

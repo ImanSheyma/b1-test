@@ -1,6 +1,9 @@
 const db = require('../config/db');
 
+//класс для взаимодействия с таблицей user
 class UserModel {
+
+    //получение записей из таблицы
     static async getUsers(){
         return new Promise(resolve => {
             db.query('SELECT * FROM user', (error, result) => {
@@ -10,11 +13,14 @@ class UserModel {
         })
     }
 
+    //добавление записей в таблицу
     static async addUsers(users){
         return new Promise(resolve => {
-            const sql = 'INSERT INTO user(LAST_NAME, NAME, SECOND_NAME, WORK_POSITION,'+
-                'EMAIL, MOBILE_PHONE, PHONE, LOGIN, PASSWORD, DEPARTMENT) VALUES ?';
-            db.query(sql, [users], (error, result) => {
+            const fields = Object.keys(users[0]).join(',');
+            const values = users.map(user => Object.values(user));
+
+            const sql = `INSERT INTO user(${fields}) VALUES ?`;
+            db.query(sql, [values], (error, result) => {
                 if(!error){
                     resolve(true);
                 }

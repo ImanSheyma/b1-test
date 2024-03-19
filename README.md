@@ -9,7 +9,7 @@ https://b1client.onrender.com/ <br/>
 <img width="901" alt="image" src="https://github.com/ImanSheyma/b1-test/assets/117591613/1277529b-4675-4cb3-8c5b-05167e33ca4b">
 
 - **Отображение данных из СУБД по визуальной аналогии с csv-файлом (в виде
-таблицы).**
+таблицы).**<br/>
 при нажатии на кнопку **fetch data** в отображаются записи выбранной таблицы (user или department) из бд.
 <img width="874" alt="image" src="https://github.com/ImanSheyma/b1-test/assets/117591613/77da783b-16fd-4c3e-aa44-afb94b838c58">
 

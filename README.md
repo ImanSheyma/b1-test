@@ -10,7 +10,7 @@ https://b1client.onrender.com/ <br/>
 
 - **Отображение данных из СУБД по визуальной аналогии с csv-файлом (в виде
 таблицы).**<br/>
-при нажатии на кнопку **fetch data** в отображаются записи выбранной таблицы (user или department) из бд.
+при нажатии на кнопку **fetch data** отображаются записи выбранной таблицы (user или department) из бд.
 <img width="874" alt="image" src="https://github.com/ImanSheyma/b1-test/assets/117591613/77da783b-16fd-4c3e-aa44-afb94b838c58">
 
 - **Реализовать сохранение данных с web-сервера в файл**
